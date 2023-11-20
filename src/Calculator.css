@@ -1,0 +1,16 @@
+.operator {
+    background-color: orange;
+    margin-left: 10px; 
+}
+
+.numbers {
+    background-color: grey;
+    color: white;
+    margin-left: 10px; 
+}
+
+.special_operator {
+    background: lightgrey; 
+    color: black; 
+    margin-left: 10px; 
+}

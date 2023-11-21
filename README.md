@@ -7,4 +7,5 @@ Technologies used are:
 ## Start using the Project through: 
 ```
 git clone https://github.com/junyiiiz/calculator.git
+npm install 
 ```

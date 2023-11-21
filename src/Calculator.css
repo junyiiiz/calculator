@@ -14,3 +14,33 @@
     color: black; 
     margin-left: 10px; 
 }
+
+.calculator_container {
+    border: 1px solid white; 
+    width: 320px; 
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator_display {
+    border: 2px solid white;
+    width: 280px; 
+    height: 150px; 
+    align-items: right; 
+    justify-content: right; 
+}
+
+.calculator_buttons_container {
+    padding: 5px; 
+
+}
+
+.calculator_zero_button {
+    max-width: 30px;
+    max-height: 30px;
+    min-width: 139px;
+    min-height: 37px;
+    background-color: grey;
+    color: white;
+    margin-left: 10px; 
+}

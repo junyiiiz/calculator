@@ -1,5 +1,4 @@
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import "./Calculator.css";
@@ -15,7 +14,7 @@ export default function Calculator({
   currentInput: string;
   handleOperations: (operator: string) => void;
   result: number;
-  toggleNumber: (value:string) => void;
+  toggleNumber: (value: string) => void;
 }) {
   const handleOperation = (operator: string) => {
     handleOperations(operator);
@@ -26,41 +25,36 @@ export default function Calculator({
 
   const handleReset = () => {
     resetNumber();
-  }
+  };
+
   return (
     <>
-      <Grid
-        container
-        display="flex"
-        sx={{
-          border: 1,
-          width: 320,
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Box
-          sx={{
-            border: 2,
-            width: 285,
-            height: 50,
-            marginLeft: 1,
-            alignItems: "right",
-            justifyContent: "right",
-          }}
-        >
-          {result ?  result :  currentInput }
+      <Grid container display="flex" className="calculator_container">
+        <Box className="calculator_display">
+          {result ? result : currentInput}
         </Box>
-        <Grid container sx={{ padding: "5px" }}>
+        <Grid container className="calculator_buttons_container">
           <Button className="special_operator" onClick={handleReset}>
             AC
           </Button>
-          <Button className="special_operator" onClick={() => handleOperation("+/-")}>+/-</Button>
-          <Button className="special_operator" onClick={() => handleOperation("%")}>%</Button>
-          <Button className="operator" onClick={() => handleOperation("/")}>/</Button>
+          <Button
+            className="special_operator"
+            onClick={() => handleOperation("+/-")}
+          >
+            +/-
+          </Button>
+          <Button
+            className="special_operator"
+            onClick={() => handleOperation("%")}
+          >
+            %
+          </Button>
+          <Button className="operator" onClick={() => handleOperation("/")}>
+            /
+          </Button>
         </Grid>
 
-        <Grid container sx={{ padding: "5px" }}>
+        <Grid container className="calculator_buttons_container">
           <Button
             className="numbers"
             onClick={() => handleSettingCurrentInput("7")}
@@ -79,10 +73,12 @@ export default function Calculator({
           >
             9
           </Button>
-          <Button className="operator" onClick={() => handleOperation("X")}>X</Button>
+          <Button className="operator" onClick={() => handleOperation("X")}>
+            X
+          </Button>
         </Grid>
 
-        <Grid container sx={{ padding: "5px" }}>
+        <Grid container className="calculator_buttons_container">
           <Button
             className="numbers"
             onClick={() => handleSettingCurrentInput("4")}
@@ -103,10 +99,12 @@ export default function Calculator({
           >
             6
           </Button>
-          <Button className="operator" onClick={() => handleOperation("-")}>-</Button>
+          <Button className="operator" onClick={() => handleOperation("-")}>
+            -
+          </Button>
         </Grid>
 
-        <Grid container sx={{ padding: "5px" }}>
+        <Grid container className="calculator_buttons_container">
           <Button
             className="numbers"
             onClick={() => handleSettingCurrentInput("1")}
@@ -125,22 +123,26 @@ export default function Calculator({
           >
             3
           </Button>
-          <Button className="operator" onClick={() => handleOperation("+")}>+</Button>
+          <Button className="operator" onClick={() => handleOperation("+")}>
+            +
+          </Button>
         </Grid>
-        <Grid container sx={{ padding: "5px" }}>
+        <Grid container className="calculator_buttons_container">
           <Button
-            style={{
-              maxWidth: "30px",
-              maxHeight: "30px",
-              minWidth: "139px",
-              minHeight: "37px",
-            }}
-            className="numbers" onClick={() => handleSettingCurrentInput("0")}
+            className="calculator_zero_button"
+            onClick={() => handleSettingCurrentInput("0")}
           >
             0
           </Button>
-          <Button className="numbers">,</Button>
-          <Button className="operator" onClick={() => handleOperation("=")}>=</Button>
+          <Button
+            className="numbers"
+            onClick={() => handleSettingCurrentInput(",")}
+          >
+            ,
+          </Button>
+          <Button className="operator" onClick={() => handleOperation("=")}>
+            =
+          </Button>
         </Grid>
       </Grid>
     </>
